@@ -15,24 +15,22 @@ function App() {
   };
 
   const handleSubmit = (event) => {
-    //Prevent page reload
+
     event.preventDefault();
 
     var { adminname, pass } = document.forms[0];
 
-    // Find user login info
+
     const userData = database.find((user) => user.name === adminname.value);
 
-    // Compare user info
     if (userData) {
       if (userData.password !== pass.value) {
-        // Invalid password
+      
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         setIsSubmitted(true);
       }
     } else {
-      // Username not found
       setErrorMessages({ name: "adminname", message: errors.adminname });
     }
   };
@@ -43,7 +41,6 @@ function App() {
       <div className="error">{errorMessages.message}</div>
     );
 
-  // JSX code for login form
   const renderForm = (
     <div className="form">
       <form onSubmit={handleSubmit}>
