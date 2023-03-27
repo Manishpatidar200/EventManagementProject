@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-
-
 function App() {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  
   const database = [
     {
       name: "Admin",
